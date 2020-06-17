@@ -23,6 +23,7 @@ export default class Login extends Component {
   }
 
     render() {
+        const {navigation} =this.props;
     return(
       <SafeAreaView style= {styles.container}>
           <KeyboardAvoidingView behavior ='margin' style={styles.container}>
@@ -53,7 +54,8 @@ export default class Login extends Component {
                 returnKeyType='go'
                 autoCorrect= {false}
                 secureTextEntry/>
-                <TouchableOpacity style = {styles.buttonContainer}>
+                <TouchableOpacity style = {styles.buttonContainer}
+                onPress={() => navigation.navigate('Home' )}>
                 <Text style = {styles.titleButton}>SIGN IN </Text>
                 </TouchableOpacity>
                 </View>
