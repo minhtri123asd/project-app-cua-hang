@@ -5,7 +5,7 @@ import {View , Text } from 'react-native'
 function CheckBillScreen() {
   return (
     <View style ={{flex: 1 , justifyContent:'center', alignItems:'center'}}>
-    <Text>Profile Screen </Text>
+    <Text>Hoa Don </Text>
     </View>
   )
 }
