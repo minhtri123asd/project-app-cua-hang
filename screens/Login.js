@@ -9,16 +9,25 @@ import { SafeAreaView,
       TouchableOpacity,
       Image,
       TextInput,
-      KeyboardAvoidingView} from 'react-native';
-
+      KeyboardAvoidingView,
+    AsyncStorage} from 'react-native';
+const userInfo ={username : 'admin' , password: '1234567'}
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      account : '',
+      username : '',
       password: '',
 
+    }
+  }
+  login = async() =>
+  {
+    if(userInfo.username ===this.state.username && userInfo.password === this.state.password){
+       this.props.navigation.navigate('Home')
+    }else {
+      alert ('Username or Password is not correct!!!!')
     }
   }
 
@@ -39,8 +48,8 @@ export default class Login extends Component {
                 <TextInput style={styles.input}
                 placeholder ="Enter username/email"
                 placeholderTextColor= 'rgba(255,255,255,0.8)'
-                onChangeText = {(text) => this.setState({account :text})}
-                value = {this.state.account}
+                onChangeText = {(username) => this.setState({username})}
+                value = {this.state.username}
                 keyboardType='email-address'
                 returnKeyType='next'
                 autoCorrect = {false}
@@ -49,13 +58,14 @@ export default class Login extends Component {
                 ref = {'txtPassword'}
                 placeholder ="Enter password"
                 placeholderTextColor= 'rgba(255,255,255,0.8)'
-                onChangeText = {(text) => this.setState({password :text})}
+                onChangeText = {(password) => this.setState({password})}
                 value = {this.state.password}
                 returnKeyType='go'
                 autoCorrect= {false}
                 secureTextEntry/>
                 <TouchableOpacity style = {styles.buttonContainer}
-                onPress={() => navigation.navigate('Home' )}>
+                onPress ={this.login}
+                >
                 <Text style = {styles.titleButton}>SIGN IN </Text>
                 </TouchableOpacity>
                 </View>
@@ -65,6 +75,7 @@ export default class Login extends Component {
           </SafeAreaView>
     );
   }
+
 }
 const styles = StyleSheet.create ({
   container: {
