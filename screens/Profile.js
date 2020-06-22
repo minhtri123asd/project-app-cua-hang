@@ -51,7 +51,7 @@ export default class ProfileScreen extends Component {
 
 const styles = StyleSheet.create({
   header:{
-    backgroundColor: "#1C1C1C",
+    backgroundColor: "rgb(32,53,70)",
     height:300,
     justifyContent:'center',
     alignItems:'center',
