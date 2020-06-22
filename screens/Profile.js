@@ -72,6 +72,7 @@ export class Profile extends Component{
 }
 
 const styles = StyleSheet.create({
+<<<<<<< HEAD
   container: {
     flex: 1,
     width: width,
@@ -87,6 +88,11 @@ const styles = StyleSheet.create({
   },
   barCode:{
     flex:5,
+=======
+  header:{
+    backgroundColor: "rgb(32,53,70)",
+    height:300,
+>>>>>>> ef5c7514b221121d2de00997a31e41d09f8e6387
     justifyContent:'center',
     marginTop:20,
     flexDirection:'column',
