@@ -59,7 +59,7 @@ export class Profile extends Component{
                         <Text style={{fontSize:22, fontWeight: "bold"}}>Đổi Mật Khẩu</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.inCardOpacity2}
-                    onPress={() => this.props.navigation.navigate('Login')}>
+                    onPress={() => this.props.navigation.navigate('SplashScreen')}>
                         <Text style={{fontSize:22, color:'white', fontWeight:"bold" }}>Đăng Xuất</Text>
                     </TouchableOpacity>
 
