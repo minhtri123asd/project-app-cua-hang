@@ -1,106 +1,165 @@
-import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,Dimensions
-} from 'react-native';
+import React, {Component} from 'react';
+import {Text, View, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView} from 'react-native';
+import Barcode from "react-native-barcode-builder";
+import * as Animatable from 'react-native-animatable'; 
 
+var {width, height} = Dimensions.get('window');
 
-export default class ProfileScreen extends Component {
+export class Profile extends Component{
+  state = {  
+    barState: 'This is Barcode'
+}  
+  render(){
+    return(
+      <ScrollView>
+        <View style = {styles.container}>
+          <Animatable.View
+          animation="slideInDown"
+           style={styles.headerContainer}>
+              <View style={styles.img2}>
+                <Image style={styles.img1} source={require('../assets/fuhua2.png')}/>
+              </View>
+            <View style={styles.barCode}>
+              {/* <TouchableOpacity style={{marginRight:20, alignItems:'flex-end'}}>
+                <Image style={{height:40, width:40}} source={require('../assets/scan.png')}/>
+              </TouchableOpacity> */}
+              <Barcode value={this.state.barState} height={60} width={1} textColor={'white'} background={'#009387'} lineColor={'white'} text={this.state.barState}/>
+            </View>
+          </Animatable.View>
+            <Animatable.View
+            animation="slideInLeft"
+             style = {styles.cardContainer}>
+                <View style = {styles.cardView}>
 
-  render() {
-    return (
-      <View style={styles.container}>
-          <View style={styles.header}>
-            <Image style={styles.avatar} source={{uri: 'https://st.quantrimang.com/photos/image/072015/22/avatar.jpg'}}/>
-              <Text style={styles.name}>Mr John</Text>
-          </View>
+                    <View style = {styles.inCard}>
+                        <Text style={styles.text}>Tên cửa hàng:</Text>
+                    </View>
+                    <View style = {styles.inCard}>
+                        <Text style={styles.text}>Họ và Tên:</Text>
+                    </View>
+                    <View style = {styles.inCard}>
+                        <Text style={styles.text}>Email:</Text>
+                    </View>
+                    <View style = {styles.inCard}>
+                        <Text style={styles.text}>Số điện thoại:</Text>
+                    </View>
+                    <View style = {styles.inCard}>
+                        <Text style={styles.text}>Địa chỉ:</Text>
+                    </View>
+                    <View style = {styles.inCard}>
+                        <Text style={styles.text}>Loại tài khoản:</Text>
+                    </View>
 
-      <View style = {styles.body} >
-      <View style ={styles.content1}>
-      <Text style = {styles.textView}> Username </Text>
-      <Text style = {styles.textInfo}> John</Text>
-      </View>
-      <View style = {styles.content1} >
-      <Text style = {styles.textView}> Email </Text>
-      <Text style = {styles.textInfo}> trinmps08368@fpt.edu.vn</Text>
-      </View>
-        <View style = {styles.content1} >
-      <Text style = {styles.textView}> Phone </Text>
-      <Text style = {styles.textInfo}> 0123-234-456</Text>
-      </View>
-        <View style = {styles.content1} >
-      <Text style = {styles.textView}> Gender </Text>
-      <Text style = {styles.textInfo}> Male</Text>
-      </View>
-        <View style = {styles.content1} >
-      <Text style = {styles.textView}> Date Of Birth </Text>
-      <Text style = {styles.textInfo}> 05/04/1998</Text>
-      </View>
-      </View>
+                    <TouchableOpacity style = {styles.inCardOpacity}
+                    onPress={() => this.props.navigation.navigate('EditProfile')}>
+                        <Text style={{fontSize:22, fontWeight: "bold"}}>Thay Đổi Thông Tin</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style = {styles.inCardOpacity}
+                    onPress={() => this.props.navigation.navigate('EditPass')}>
+                        <Text style={{fontSize:22, fontWeight: "bold"}}>Đổi Mật Khẩu</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style = {styles.inCardOpacity2}
+                    onPress={() => this.props.navigation.navigate('Login')}>
+                        <Text style={{fontSize:22, color:'white', fontWeight:"bold" }}>Đăng Xuất</Text>
+                    </TouchableOpacity>
 
-
-
-
-      </View>
-    );
+                </View>
+            </Animatable.View>
+        </View>
+      </ScrollView>
+    )
   }
 }
 
 const styles = StyleSheet.create({
-  header:{
-    backgroundColor: "#1C1C1C",
-    height:300,
-    justifyContent:'center',
-    alignItems:'center',
-    flexDirection:'column'
-
-  },
-  avatar: {
-    width: 130,
-    height: 130,
-    borderRadius: 63,
-    borderWidth: 4,
-    borderColor: "white",
-},
-  name:{
-    fontSize:15,
-    color:"white",
-    fontWeight:'bold',
-  },
-
-
-  name:{
-    fontSize:28,
-    color: "#696969",
-    fontWeight: "600"
-  },
-  textView: {
-    color: '#888888',
-    paddingBottom : 10
-  },
   container: {
-    backgroundColor: '#F8F8FF',
-    flex:1
+    flex: 1,
+    width: width,
+    height: 680,
+    elevation: 5,
+    backgroundColor:'white'
   },
-  body : {
-    backgroundColor:'#F8F8FF',
-    margin :20
+  headerContainer:{
+    flexDirection:'row',
+    backgroundColor:'#009387',
+    borderBottomStartRadius:60,
+    marginBottom:10
   },
-  textInfo: {
-    marginBottom : 5,
-
-    fontWeight:'bold',
-    fontSize: 15
+  barCode:{
+    flex:5,
+    justifyContent:'center',
+    marginTop:20,
+    flexDirection:'column',
   },
-  content1: {
-    borderBottomWidth : 1,
-    borderBottomColor : '#888888',
-    marginBottom: 4
-  }
-
-
-
-});
+  img1:{
+    width:140,
+    height:140,
+    borderRadius:90,
+    justifyContent:'center',
+    backgroundColor:'white'
+  },
+  img2:{
+    height:145,
+    justifyContent: 'center',
+    margin:10,
+    flex:3.2,
+    borderRadius:90,
+    backgroundColor:'black',
+    alignItems:'center',
+  },
+  cardContainer:{
+    width:width,
+    height:height,
+    backgroundColor:'white',
+    shadowColor: '#000',
+    shadowOffset: {width: 0.5, height: 0.5},
+    shadowOpacity: 0.5,
+    shadowRadius: 3,
+    elevation: 5,
+  },
+  cardView:{
+    width: width - 20,
+    height:470,
+    backgroundColor: '#009387',
+    margin: 10,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: {width: 0.5, height: 0.5},
+    shadowOpacity: 0.5,
+    shadowRadius: 3,
+    elevation: 5,
+  },
+  inCard:{
+    backgroundColor:'rgba(254,235,208,0.5)',
+    borderColor:'blue',
+    borderWidth:1,
+    borderRadius:5,
+    margin:6,
+    height:40,
+    justifyContent:'center'
+  },
+  inCardOpacity:{
+    backgroundColor:'white',
+    borderColor: 'blue',
+    borderWidth: 1,
+    borderRadius: 5,
+    margin: 6,
+    alignItems:'center',
+    height:40,
+    justifyContent:'center'
+  },
+  inCardOpacity2:{
+    backgroundColor:'#FA1646',
+    borderColor: 'blue',
+    borderWidth: 1,
+    borderRadius: 5,
+    margin: 6,
+    alignItems:'center',
+    height:40,
+    justifyContent:'center'
+  },
+  text:{
+    fontSize:22,
+    marginLeft:10,
+    fontWeight: "bold"}
+})

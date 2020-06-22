@@ -1,12 +1,22 @@
-import React from 'react'
-import {View , Text } from 'react-native'
+import React, {Component} from 'react';
+import { Text, View, SafeAreaView, Image, StyleSheet, Dimensions } from 'react-native';
 
+var {height, width} = Dimensions.get('window');
 
-function CheckBillScreen() {
-  return (
-    <View style ={{flex: 1 , justifyContent:'center', alignItems:'center'}}>
-    <Text>Hoa Don </Text>
-    </View>
-  )
+export class Checkbill extends Component{
+    render (){
+        return(
+            <SafeAreaView style={{ flex: 1}}>
+                <View style={{flex:1, justifyContent: 'center', alignItems:'center'}}>
+                    <Image style={styles.imageHis} source={require('../assets/fuhua4.png')}/>
+                </View>
+            </SafeAreaView>
+    );
+  }
 }
-export default CheckBillScreen;
+const styles = StyleSheet.create({
+    imageHis:{
+        width:width,
+        height:height
+    }
+})

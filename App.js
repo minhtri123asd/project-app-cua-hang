@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from './screens/Login'
-import Home from './screens/Home'
+import MainTabScreen from './screens/MainTabScreen';
 import {createStore} from 'redux'
 //state
 let appState = {
@@ -74,7 +74,7 @@ function App() {
    headerShown: false
  }}>
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={MainTabScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
