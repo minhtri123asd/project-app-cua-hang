@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Text, View, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView} from 'react-native';
 import Barcode from "react-native-barcode-builder";
 import * as Animatable from 'react-native-animatable'; 
+import LinearGradient from 'react-native-linear-gradient';
 
 var {width, height} = Dimensions.get('window');
 
@@ -52,7 +53,9 @@ export class Profile extends Component{
 
                     <TouchableOpacity style = {styles.inCardOpacity}
                     onPress={() => this.props.navigation.navigate('EditProfile')}>
+                      <LinearGradient colors = {['#02AAB0','#00CDAC']} style ={styles.signIn}>
                         <Text style={{fontSize:22, fontWeight: "bold"}}>Thay Đổi Thông Tin</Text>
+                        </LinearGradient>
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.inCardOpacity}
                     onPress={() => this.props.navigation.navigate('EditPass')}>
@@ -72,13 +75,12 @@ export class Profile extends Component{
 }
 
 const styles = StyleSheet.create({
-<<<<<<< HEAD
   container: {
     flex: 1,
     width: width,
     height: 680,
     elevation: 5,
-    backgroundColor:'white'
+    backgroundColor:'#d6efc7'
   },
   headerContainer:{
     flexDirection:'row',
@@ -88,11 +90,6 @@ const styles = StyleSheet.create({
   },
   barCode:{
     flex:5,
-=======
-  header:{
-    backgroundColor: "rgb(32,53,70)",
-    height:300,
->>>>>>> ef5c7514b221121d2de00997a31e41d09f8e6387
     justifyContent:'center',
     marginTop:20,
     flexDirection:'column',
@@ -116,7 +113,7 @@ const styles = StyleSheet.create({
   cardContainer:{
     width:width,
     height:height,
-    backgroundColor:'white',
+    backgroundColor:'#d6efc7',
     shadowColor: '#000',
     shadowOffset: {width: 0.5, height: 0.5},
     shadowOpacity: 0.5,
@@ -126,19 +123,11 @@ const styles = StyleSheet.create({
   cardView:{
     width: width - 20,
     height:470,
-    backgroundColor: '#009387',
     margin: 10,
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: {width: 0.5, height: 0.5},
-    shadowOpacity: 0.5,
-    shadowRadius: 3,
-    elevation: 5,
   },
   inCard:{
-    backgroundColor:'rgba(254,235,208,0.5)',
-    borderColor:'blue',
-    borderWidth:1,
+    backgroundColor:'#f7f7f7',
+    borderWidth:0.5,
     borderRadius:5,
     margin:6,
     height:40,
@@ -146,19 +135,18 @@ const styles = StyleSheet.create({
   },
   inCardOpacity:{
     backgroundColor:'white',
-    borderColor: 'blue',
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 10,
     margin: 6,
     alignItems:'center',
     height:40,
-    justifyContent:'center'
+    justifyContent:'center',
   },
   inCardOpacity2:{
     backgroundColor:'#FA1646',
     borderColor: 'blue',
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 10,
     margin: 6,
     alignItems:'center',
     height:40,
@@ -167,5 +155,13 @@ const styles = StyleSheet.create({
   text:{
     fontSize:22,
     marginLeft:10,
-    fontWeight: "bold"}
+    fontWeight: 'bold'
+  },
+  signIn: {
+    width: '100%',
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10
+},
 })
