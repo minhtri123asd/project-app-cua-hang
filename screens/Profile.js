@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView} from 'react-native';
 import Barcode from "react-native-barcode-builder";
-import * as Animatable from 'react-native-animatable'; 
+import * as Animatable from 'react-native-animatable';
 
 var {width, height} = Dimensions.get('window');
 
 export class Profile extends Component{
-  state = {  
-    barState: 'This is Barcode'
-}  
+  state = {
+ barcode : 'this is barcode'
+}
   render(){
     return(
       <ScrollView>
@@ -17,13 +17,11 @@ export class Profile extends Component{
           animation="slideInDown"
            style={styles.headerContainer}>
               <View style={styles.img2}>
-                <Image style={styles.img1} source={require('../assets/fuhua2.png')}/>
+                <Image style={styles.img1} source={require('../assets/logo9.png')}/>
               </View>
             <View style={styles.barCode}>
-              {/* <TouchableOpacity style={{marginRight:20, alignItems:'flex-end'}}>
-                <Image style={{height:40, width:40}} source={require('../assets/scan.png')}/>
-              </TouchableOpacity> */}
-              <Barcode value={this.state.barState} height={60} width={1} textColor={'white'} background={'#009387'} lineColor={'white'} text={this.state.barState}/>
+
+              <Barcode value = {this.state.barcode} height={60} width={1} textColor={'white'} background={'#009387'} lineColor={'white'} text={'01233-12313312-2312312'}/>
             </View>
           </Animatable.View>
             <Animatable.View
@@ -72,7 +70,7 @@ export class Profile extends Component{
 }
 
 const styles = StyleSheet.create({
-<<<<<<< HEAD
+// <<<<<<< HEAD
   container: {
     flex: 1,
     width: width,
@@ -87,12 +85,12 @@ const styles = StyleSheet.create({
     marginBottom:10
   },
   barCode:{
-    flex:5,
-=======
+    flex:5,},
+
   header:{
     backgroundColor: "rgb(32,53,70)",
     height:300,
->>>>>>> ef5c7514b221121d2de00997a31e41d09f8e6387
+
     justifyContent:'center',
     marginTop:20,
     flexDirection:'column',
