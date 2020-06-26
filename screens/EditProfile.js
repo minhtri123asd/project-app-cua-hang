@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Text, TextInput, View, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView} from 'react-native';
-import Profile from './Profile'
 import * as Animatable from 'react-native-animatable'; 
 
 var {width, height} = Dimensions.get('window');
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
     width: width,
     height: 680,
     elevation: 5,
-    backgroundColor:'white',
+    backgroundColor:'#d6efc7',
     alignItems:'center',
   },
   img1:{
@@ -78,7 +77,7 @@ const styles = StyleSheet.create({
   cardContainer:{
     width:width,
     height:height,
-    backgroundColor:'white',
+    backgroundColor:'#d6efc7',
     shadowColor: '#000',
     shadowOffset: {width: 0.5, height: 0.5},
     shadowOpacity: 0.5,
@@ -88,18 +87,10 @@ const styles = StyleSheet.create({
   cardView:{
     width: width - 20,
     height:415,
-    backgroundColor: '#009387',
     margin: 10,
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: {width: 0.5, height: 0.5},
-    shadowOpacity: 0.5,
-    shadowRadius: 3,
-    elevation: 5,
   },
   inCard:{
-      backgroundColor:'rgba(254,235,208,0.5)',
-      borderColor:'blue',
+      backgroundColor:'#f7f7f7',
       borderWidth:1,
       borderRadius:5,
       margin:6,
@@ -109,7 +100,7 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
     borderColor: 'blue',
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 10,
     margin: 6,
     alignItems:'center',
     height:40,
@@ -119,7 +110,7 @@ const styles = StyleSheet.create({
     backgroundColor:'#FA1646',
     borderColor: 'blue',
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 10,
     margin: 6,
     alignItems:'center',
     height:40,

@@ -15,7 +15,11 @@ const MainTabScreen =() => (
     <Tab.Navigator initialRouteName="Home" activeColor="#fff"  inactiveColor="black" barStyle={{ backgroundColor: '#29998B' }}>
       <Tab.Screen name="Home" component={Home} options={{tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (<Icon name="ios-home" color={color} size={26} />),}}/>
+<<<<<<< HEAD
       <Tab.Screen name="Checkbill" component={Check} options={{ tabBarLabel: 'CheckBill',
+=======
+      <Tab.Screen name="Checkbill" component={Checkbill} options={{ tabBarLabel: 'Bill',
+>>>>>>> 43fefd3edf59aa1d3ef38ee4ac1df42de0f09676
           tabBarIcon: ({ color }) => (<Icon name="ios-timer" color={color} size={26} />),}}/>
       <Tab.Screen name="Profile" component={ProfileStack} options={{tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (<Icon name="ios-person" color={color} size={26} />),}}/>
