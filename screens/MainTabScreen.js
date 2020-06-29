@@ -1,13 +1,12 @@
 import React,{Component} from 'react';
-
-import {Home, Checkbill, Profile, EditProfile, EditPass,} from './index'
+import {Home, Checkbill, Profile, EditProfile, EditPass,DetailItem} from './index'
 import {createStackNavigator} from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const navOptionHandler = () => ({
     headerShown: false
-  })  
+  })
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -32,5 +31,20 @@ function ProfileStack(){
       <StackProfile.Screen name="EditProfile" component={EditProfile} options={navOptionHandler}/>
       <StackProfile.Screen name="EditPass" component={EditPass} options={navOptionHandler}/>
     </StackProfile.Navigator>
+
+
   );
 }
+
+const CheckBills = createStackNavigator() ;
+function Check() {
+  return (
+    <CheckBills.Navigator   screenOptions={{
+    headerShown: false
+  }}  initialRouteName='Checkbill' >
+    <CheckBills.Screen name = 'Checkbill' component={Checkbill}  />
+    <CheckBills.Screen name = 'DetailItem' component= {DetailItem} />
+    </CheckBills.Navigator>
+  )
+}
+

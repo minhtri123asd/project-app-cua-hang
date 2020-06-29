@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView} from 'react-native';
 import Barcode from "react-native-barcode-builder";
-import * as Animatable from 'react-native-animatable'; 
+import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 
 var {width, height} = Dimensions.get('window');
 
 export class Profile extends Component{
-  state = {  
-    barState: 'This is Barcode'
-}  
+  state = {
+ barcode : 'this is barcode'
+}
   render(){
     return(
       <ScrollView>
@@ -18,13 +18,11 @@ export class Profile extends Component{
           animation="slideInDown"
            style={styles.headerContainer}>
               <View style={styles.img2}>
-                <Image style={styles.img1} source={require('../assets/fuhua2.png')}/>
+                <Image style={styles.img1} source={require('../assets/logo9.png')}/>
               </View>
             <View style={styles.barCode}>
-              {/* <TouchableOpacity style={{marginRight:20, alignItems:'flex-end'}}>
-                <Image style={{height:40, width:40}} source={require('../assets/scan.png')}/>
-              </TouchableOpacity> */}
-              <Barcode value={this.state.barState} height={60} width={1} textColor={'white'} background={'#009387'} lineColor={'white'} text={this.state.barState}/>
+
+              <Barcode value = {this.state.barcode} height={60} width={1} textColor={'white'} background={'#009387'} lineColor={'white'} text={'01233-12313312-2312312'}/>
             </View>
           </Animatable.View>
             <Animatable.View
@@ -33,22 +31,22 @@ export class Profile extends Component{
                 <View style = {styles.cardView}>
 
                     <View style = {styles.inCard}>
-                        <Text style={styles.text}>Tên cửa hàng:</Text>
+                        <Text style={styles.text}></Text>
                     </View>
                     <View style = {styles.inCard}>
-                        <Text style={styles.text}>Họ và Tên:</Text>
+                        <Text style={styles.text}></Text>
                     </View>
                     <View style = {styles.inCard}>
-                        <Text style={styles.text}>Email:</Text>
+                        <Text style={styles.text}></Text>
                     </View>
                     <View style = {styles.inCard}>
-                        <Text style={styles.text}>Số điện thoại:</Text>
+                        <Text style={styles.text}></Text>
                     </View>
                     <View style = {styles.inCard}>
-                        <Text style={styles.text}>Địa chỉ:</Text>
+                        <Text style={styles.text}></Text>
                     </View>
                     <View style = {styles.inCard}>
-                        <Text style={styles.text}>Loại tài khoản:</Text>
+                        <Text style={styles.text}></Text>
                     </View>
 
                     <TouchableOpacity style = {styles.inCardOpacity}
@@ -80,7 +78,6 @@ const styles = StyleSheet.create({
     width: width,
     height: 680,
     elevation: 5,
-    backgroundColor:'#d6efc7'
   },
   headerContainer:{
     flexDirection:'row',
@@ -89,6 +86,11 @@ const styles = StyleSheet.create({
     marginBottom:10
   },
   barCode:{
+    flex:5,},
+
+  header:{
+    backgroundColor: "rgb(32,53,70)",
+    height:300,
     flex:5,
     justifyContent:'center',
     marginTop:20,
@@ -113,7 +115,6 @@ const styles = StyleSheet.create({
   cardContainer:{
     width:width,
     height:height,
-    backgroundColor:'#d6efc7',
     shadowColor: '#000',
     shadowOffset: {width: 0.5, height: 0.5},
     shadowOpacity: 0.5,
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
   inCardOpacity:{
     backgroundColor:'white',
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 6,
     margin: 6,
     alignItems:'center',
     height:40,
@@ -146,7 +147,7 @@ const styles = StyleSheet.create({
     backgroundColor:'#FA1646',
     borderColor: 'blue',
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 6,
     margin: 6,
     alignItems:'center',
     height:40,
@@ -155,13 +156,12 @@ const styles = StyleSheet.create({
   text:{
     fontSize:22,
     marginLeft:10,
-    fontWeight: 'bold'
-  },
+    fontWeight: "bold"},
   signIn: {
     width: '100%',
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 10
+    borderRadius: 6
 },
 })

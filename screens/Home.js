@@ -1,7 +1,7 @@
 import  React, {Component} from 'react';
 import {Text, View, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
 import {BackgroundCarousel} from '../components/BackgroundCarousel';
-import * as Animatable from 'react-native-animatable'; 
+import * as Animatable from 'react-native-animatable';
 
 var {height, width} = Dimensions.get('window');
 const images = [
@@ -18,15 +18,16 @@ export class Home extends Component{
       <Animatable.View animation="lightSpeedIn" style={styles.container}>
         <BackgroundCarousel images={images} />
       </Animatable.View>
-      
+
     )
   }
 }
 
+
 const styles = StyleSheet.create({
   container:{
     width: '95%',
-    height: height / 3,
+    height: height / 4,
     margin: 10,
     shadowColor: '#000',
     shadowOffset: {width: 0.5, height: 0.5},
