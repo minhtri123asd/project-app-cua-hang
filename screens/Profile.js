@@ -55,7 +55,7 @@ export class Profile extends Component{
                     onPress={() => this.props.navigation.navigate('EditProfile')}>
                       <LinearGradient colors = {['#02AAB0','#00CDAC']} style ={styles.signIn}>
                         <Text style={{fontSize:22, fontWeight: "bold"}}>Thay Đổi Thông Tin</Text>
-                        </LinearGradient>
+                      </LinearGradient>
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.inCardOpacity}
                     onPress={() => this.props.navigation.navigate('EditPass')}>

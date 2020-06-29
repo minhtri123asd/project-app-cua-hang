@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 
-import {Home, Checkbill, Profile, EditProfile, EditPass} from './index'
+import {Home, Checkbill, Profile, EditProfile, EditPass,} from './index'
 import {createStackNavigator} from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
