@@ -3,4 +3,5 @@ export * from './Checkbill';
 export * from './Profile';
 export * from './EditProfile';
 export * from './EditPass';
-export * from './DetailItem'
+export * from './DetailItem';
+export * from './ProfileContainer';

@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Home, Checkbill, Profile, EditProfile, EditPass,DetailItem} from './index'
+import {Home, Checkbill, Profile, EditProfile, EditPass,DetailItem,ProfileContainer} from './index'
 import {createStackNavigator} from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -16,7 +16,7 @@ const MainTabScreen =() => (
           tabBarIcon: ({ color }) => (<Icon name="ios-home" color={color} size={26} />),}}/>
       <Tab.Screen name="Checkbill" component={Checkbill} options={{ tabBarLabel: 'Bill',
           tabBarIcon: ({ color }) => (<Icon name="ios-timer" color={color} size={26} />),}}/>
-      <Tab.Screen name="Profile" component={ProfileStack} options={{tabBarLabel: 'Profile',
+      <Tab.Screen name="ProfileContainer" component={ProfileStack} options={{tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (<Icon name="ios-person" color={color} size={26} />),}}/>
     </Tab.Navigator>
 );
@@ -26,10 +26,11 @@ export default MainTabScreen;
 const StackProfile = createStackNavigator();
 function ProfileStack(){
   return(
-    <StackProfile.Navigator initialRouteName="Profile">
+    <StackProfile.Navigator initialRouteName="ProfileContainer">
+      <StackProfile.Screen name="ProfileContainer" component={Profile} options={navOptionHandler}/>
       <StackProfile.Screen name="Profile" component={Profile} options={navOptionHandler}/>
-      <StackProfile.Screen name="EditProfile" component={EditProfile} options={navOptionHandler}/>
-      <StackProfile.Screen name="EditPass" component={EditPass} options={navOptionHandler}/>
+      {/* <StackProfile.Screen name="EditProfile" component={EditProfile} options={navOptionHandler}/>
+      <StackProfile.Screen name="EditPass" component={EditPass} options={navOptionHandler}/> */}
     </StackProfile.Navigator>
 
 

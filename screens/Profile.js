@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView} from 'react-native';
+import {TextInput, View, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView, Text} from 'react-native';
 import Barcode from "react-native-barcode-builder";
 import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
@@ -21,7 +21,7 @@ export class Profile extends Component{
                 <Image style={styles.img1} source={require('../assets/logo9.png')}/>
               </View>
             <View style={styles.barCode}>
-
+              <Text style={styles.text}>Thông tin cơ bản</Text>
               <Barcode value = {this.state.barcode} height={60} width={1} textColor={'white'} background={'#009387'} lineColor={'white'} text={'01233-12313312-2312312'}/>
             </View>
           </Animatable.View>
@@ -31,24 +31,15 @@ export class Profile extends Component{
                 <View style = {styles.cardView}>
 
                     <View style = {styles.inCard}>
-                        <Text style={styles.text}></Text>
+                        <TextInput style={styles.text} placeholder="Tên cửa hàng"></TextInput>
                     </View>
                     <View style = {styles.inCard}>
-                        <Text style={styles.text}></Text>
+                        <TextInput style={styles.text} placeholder="Thời gian làm việc"></TextInput>
                     </View>
                     <View style = {styles.inCard}>
-                        <Text style={styles.text}></Text>
+                        <TextInput style={styles.text} placeholder="Địa chỉ cửa hàng"></TextInput>
                     </View>
-                    <View style = {styles.inCard}>
-                        <Text style={styles.text}></Text>
-                    </View>
-                    <View style = {styles.inCard}>
-                        <Text style={styles.text}></Text>
-                    </View>
-                    <View style = {styles.inCard}>
-                        <Text style={styles.text}></Text>
-                    </View>
-
+{/* 
                     <TouchableOpacity style = {styles.inCardOpacity}
                     onPress={() => this.props.navigation.navigate('EditProfile')}>
                       <LinearGradient colors = {['#02AAB0','#00CDAC']} style ={styles.signIn}>
@@ -62,7 +53,7 @@ export class Profile extends Component{
                     <TouchableOpacity style = {styles.inCardOpacity2}
                     onPress={() => this.props.navigation.navigate('SplashScreen')}>
                         <Text style={{fontSize:22, color:'white', fontWeight:"bold" }}>Đăng Xuất</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
 
                 </View>
             </Animatable.View>
@@ -76,7 +67,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: width,
-    height: 680,
+    height: 330,
     elevation: 5,
   },
   headerContainer:{
@@ -86,6 +77,8 @@ const styles = StyleSheet.create({
     marginBottom:10
   },
   barCode:{
+    justifyContent:'center',
+    alignItems:'center',
     flex:5,},
 
   header:{
@@ -97,19 +90,18 @@ const styles = StyleSheet.create({
     flexDirection:'column',
   },
   img1:{
-    width:140,
-    height:140,
+    width:100,
+    height:100,
     borderRadius:90,
     justifyContent:'center',
     backgroundColor:'white'
   },
   img2:{
-    height:145,
+    height:105,
     justifyContent: 'center',
     margin:10,
     flex:3.2,
     borderRadius:90,
-    backgroundColor:'black',
     alignItems:'center',
   },
   cardContainer:{
@@ -131,8 +123,9 @@ const styles = StyleSheet.create({
     borderWidth:0.5,
     borderRadius:5,
     margin:6,
-    height:40,
-    justifyContent:'center'
+    height:50,
+    justifyContent:'center',
+    alignItems:'center',
   },
   inCardOpacity:{
     backgroundColor:'white',

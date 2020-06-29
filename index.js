@@ -5,7 +5,7 @@
 import {AppRegistry} from 'react-native';
 import App from './App';
 import Test from './screens/item'
-import Login from './screens/Login'
+import Login from './screens/ProfileContainer'
 import {name as appName} from './app.json';
 
 AppRegistry.registerComponent(appName, () => App);
