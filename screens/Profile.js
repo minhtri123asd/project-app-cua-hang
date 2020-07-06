@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView} from 'react-native';
 import Barcode from "react-native-barcode-builder";
-<<<<<<< HEAD
+
 import * as Animatable from 'react-native-animatable';
-=======
-import * as Animatable from 'react-native-animatable'; 
+
 import LinearGradient from 'react-native-linear-gradient';
->>>>>>> 43fefd3edf59aa1d3ef38ee4ac1df42de0f09676
+
 
 var {width, height} = Dimensions.get('window');
 
@@ -77,10 +76,8 @@ export class Profile extends Component{
 }
 
 const styles = StyleSheet.create({
-<<<<<<< HEAD
-// <<<<<<< HEAD
-=======
->>>>>>> 43fefd3edf59aa1d3ef38ee4ac1df42de0f09676
+
+
   container: {
     flex: 1,
     width: width,
@@ -95,16 +92,16 @@ const styles = StyleSheet.create({
     marginBottom:10
   },
   barCode:{
-<<<<<<< HEAD
+
     flex:5,},
 
   header:{
     backgroundColor: "rgb(32,53,70)",
     height:300,
 
-=======
+
     flex:5,
->>>>>>> 43fefd3edf59aa1d3ef38ee4ac1df42de0f09676
+
     justifyContent:'center',
     marginTop:20,
     flexDirection:'column',
@@ -170,12 +167,11 @@ const styles = StyleSheet.create({
   text:{
     fontSize:22,
     marginLeft:10,
-<<<<<<< HEAD
-    fontWeight: "bold"}
-})
-=======
-    fontWeight: 'bold'
-  },
+
+    fontWeight: "bold"},
+
+
+
   signIn: {
     width: '100%',
     height: 40,
@@ -184,4 +180,3 @@ const styles = StyleSheet.create({
     borderRadius: 10
 },
 })
->>>>>>> 43fefd3edf59aa1d3ef38ee4ac1df42de0f09676

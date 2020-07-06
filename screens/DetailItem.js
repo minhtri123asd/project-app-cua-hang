@@ -18,8 +18,8 @@ export class  DetailItem extends Component {
   <View style = {styles.container}>
   <View style = {styles.detailBill} >
   <Text style = {styles.nameBillDetail}>{this.props.route.params?.item.nameBill}</Text>
-  <Text style = {styles.priceBillDetail}>{this.props.route.params?.item.price}đ</Text>
-  <Text style = {styles.finishBillDetail}>{this.props.route.params?.item.isFinished}</Text>
+  <Text style = {styles.priceBillDetail}>{this.props.route.params?.item.price} đ</Text>
+  <Text style = {styles.finishBillDetail}>{(this.props.route.params?.item.isFinished) ? <IsFinishTrue /> : <IsFinishFalse />}</Text>
   </View>
   <View style={ styles.mInfo }>
   <View style = {styles.wrapper} >
@@ -58,6 +58,13 @@ export class  DetailItem extends Component {
   </View>
 )}
 }
+const IsFinishTrue = () =>  {
+  return   <Text style = {{color : 'green'}}>Thành Công </Text>
+}
+const IsFinishFalse = () =>  {
+  return   <Text style = {{color : 'red'}}>Thất Bại</Text>
+}
+
  const styles = StyleSheet.create({
    container:{
      flex: 1
@@ -72,7 +79,7 @@ export class  DetailItem extends Component {
 
    },
    mInfo :{
-     flex : 1.2/5,
+     flex : 1.5/5,
      marginTop: 40,
      backgroundColor: '#FFFFFF',
      borderColor : '#D9D9D9',
@@ -80,7 +87,7 @@ export class  DetailItem extends Component {
      justifyContent: 'center'
    },
    mInfo2 : {
-     flex : 1/5,
+     flex : 1.2/5,
      marginTop: 40,
      backgroundColor: '#FFFFFF',
      borderColor : '#D9D9D9',
