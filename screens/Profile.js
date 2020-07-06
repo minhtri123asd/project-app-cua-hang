@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView} from 'react-native';
+import {TextInput, View, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView, Text} from 'react-native';
 import Barcode from "react-native-barcode-builder";
+<<<<<<< HEAD
 
 import * as Animatable from 'react-native-animatable';
 
 import LinearGradient from 'react-native-linear-gradient';
 
+=======
+import * as Animatable from 'react-native-animatable';
+import LinearGradient from 'react-native-linear-gradient';
+>>>>>>> e931e501d243ba7376fdd391993249019f3419a9
 
 var {width, height} = Dimensions.get('window');
 
@@ -24,7 +29,7 @@ export class Profile extends Component{
                 <Image style={styles.img1} source={require('../assets/logo9.png')}/>
               </View>
             <View style={styles.barCode}>
-
+              <Text style={styles.text}>Thông tin cơ bản</Text>
               <Barcode value = {this.state.barcode} height={60} width={1} textColor={'white'} background={'#009387'} lineColor={'white'} text={'01233-12313312-2312312'}/>
             </View>
           </Animatable.View>
@@ -34,29 +39,20 @@ export class Profile extends Component{
                 <View style = {styles.cardView}>
 
                     <View style = {styles.inCard}>
-                        <Text style={styles.text}>Tên cửa hàng:</Text>
+                        <TextInput style={styles.text} placeholder="Tên cửa hàng"></TextInput>
                     </View>
                     <View style = {styles.inCard}>
-                        <Text style={styles.text}>Họ và Tên:</Text>
+                        <TextInput style={styles.text} placeholder="Thời gian làm việc"></TextInput>
                     </View>
                     <View style = {styles.inCard}>
-                        <Text style={styles.text}>Email:</Text>
+                        <TextInput style={styles.text} placeholder="Địa chỉ cửa hàng"></TextInput>
                     </View>
-                    <View style = {styles.inCard}>
-                        <Text style={styles.text}>Số điện thoại:</Text>
-                    </View>
-                    <View style = {styles.inCard}>
-                        <Text style={styles.text}>Địa chỉ:</Text>
-                    </View>
-                    <View style = {styles.inCard}>
-                        <Text style={styles.text}>Loại tài khoản:</Text>
-                    </View>
-
+{/* 
                     <TouchableOpacity style = {styles.inCardOpacity}
                     onPress={() => this.props.navigation.navigate('EditProfile')}>
                       <LinearGradient colors = {['#02AAB0','#00CDAC']} style ={styles.signIn}>
                         <Text style={{fontSize:22, fontWeight: "bold"}}>Thay Đổi Thông Tin</Text>
-                        </LinearGradient>
+                      </LinearGradient>
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.inCardOpacity}
                     onPress={() => this.props.navigation.navigate('EditPass')}>
@@ -65,7 +61,7 @@ export class Profile extends Component{
                     <TouchableOpacity style = {styles.inCardOpacity2}
                     onPress={() => this.props.navigation.navigate('SplashScreen')}>
                         <Text style={{fontSize:22, color:'white', fontWeight:"bold" }}>Đăng Xuất</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
 
                 </View>
             </Animatable.View>
@@ -76,14 +72,16 @@ export class Profile extends Component{
 }
 
 const styles = StyleSheet.create({
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e931e501d243ba7376fdd391993249019f3419a9
   container: {
     flex: 1,
     width: width,
-    height: 680,
+    height: 330,
     elevation: 5,
-    backgroundColor:'#d6efc7'
   },
   headerContainer:{
     flexDirection:'row',
@@ -92,40 +90,47 @@ const styles = StyleSheet.create({
     marginBottom:10
   },
   barCode:{
+<<<<<<< HEAD
 
+=======
+    justifyContent:'center',
+    alignItems:'center',
+>>>>>>> e931e501d243ba7376fdd391993249019f3419a9
     flex:5,},
 
   header:{
     backgroundColor: "rgb(32,53,70)",
     height:300,
+<<<<<<< HEAD
 
 
     flex:5,
 
+=======
+    flex:5,
+>>>>>>> e931e501d243ba7376fdd391993249019f3419a9
     justifyContent:'center',
     marginTop:20,
     flexDirection:'column',
   },
   img1:{
-    width:140,
-    height:140,
+    width:100,
+    height:100,
     borderRadius:90,
     justifyContent:'center',
     backgroundColor:'white'
   },
   img2:{
-    height:145,
+    height:105,
     justifyContent: 'center',
     margin:10,
     flex:3.2,
     borderRadius:90,
-    backgroundColor:'black',
     alignItems:'center',
   },
   cardContainer:{
     width:width,
     height:height,
-    backgroundColor:'#d6efc7',
     shadowColor: '#000',
     shadowOffset: {width: 0.5, height: 0.5},
     shadowOpacity: 0.5,
@@ -142,13 +147,14 @@ const styles = StyleSheet.create({
     borderWidth:0.5,
     borderRadius:5,
     margin:6,
-    height:40,
-    justifyContent:'center'
+    height:50,
+    justifyContent:'center',
+    alignItems:'center',
   },
   inCardOpacity:{
     backgroundColor:'white',
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 6,
     margin: 6,
     alignItems:'center',
     height:40,
@@ -158,7 +164,7 @@ const styles = StyleSheet.create({
     backgroundColor:'#FA1646',
     borderColor: 'blue',
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 6,
     margin: 6,
     alignItems:'center',
     height:40,
@@ -167,16 +173,20 @@ const styles = StyleSheet.create({
   text:{
     fontSize:22,
     marginLeft:10,
+<<<<<<< HEAD
 
     fontWeight: "bold"},
 
 
 
+=======
+    fontWeight: "bold"},
+>>>>>>> e931e501d243ba7376fdd391993249019f3419a9
   signIn: {
     width: '100%',
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 10
+    borderRadius: 6
 },
 })
