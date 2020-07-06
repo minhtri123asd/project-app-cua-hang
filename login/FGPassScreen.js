@@ -6,6 +6,7 @@ import {
     TextInput,
     Platform,
     StyleSheet ,
+    Image
    
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
@@ -47,89 +48,28 @@ const SignInScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-            <Text style = {styles.text_header}> Đăng Ký</Text>
+            <Image style={styles.img1} source={require('../assets/logo9.png')}/>
             </View>
-        <Animatable.View 
-        animation ="fadeInUpBig"
-        style={styles.footer}>
-            
-        <Text style ={styles.text_footer}>Email</Text>
-            <View style={styles.action}>
-                <FontAwesome5
-                name ="user"
-                color ="#05375a"
-                size ={20}
-                    />
-            <TextInput 
-            placeholder ="Nhập Email"
-            style={styles.textInput}
-            autoCapitalize ="none"
-            />
-        </View>
-        <Text style ={styles.text_footer}>Mật Khẩu</Text>
+        <View style={styles.footer}>   
+            <Text style ={styles.text_header}>Nhập địa chỉ email của bạn</Text>
+            <Text style ={styles.text_footer}>Chúng tôi sẽ gữi mã xác nhận vào email</Text>
+            <Text style ={styles.text_footer2}>mà bạn đã đăng ký</Text>
         <View style={styles.action}>
+            <View style={styles.textInput}>
                 <FontAwesome5
-                name ="lock"
+                name ="share"
                 color ="#05375a"
                 size ={20}
                     />
 
             <TextInput 
-            placeholder ="Nhập Mật Khẩu"
-            style={styles.textInput}
-            secureTextEntry ={data.secureTextEntry ? true : false}
-            onChangeText={(val) => handlePasswordChange(val)}
-            autoCapitalize ="none"
+            placeholder ="Email"
+            style={styles.textInput2}
             />
-            <TouchableOpacity onPress ={updateSecureTextEntry}>
-                {data.secureTextEntry ?
-                <FontAwesome5
-                name ="eye-slash"
-                color ="grey"
-                size={20}
-                />
-                    :
-                  <FontAwesome5
-                name ="eye"
-                color ="grey"
-                size={20}
-                />
-            }
-            </TouchableOpacity>
-        </View>
-        <Text style ={styles.text_footer}>Nhập Lại Mật Khẩu</Text>
-        <View style={styles.action}>
-                <FontAwesome5
-                name ="lock"
-                color ="#05375a"
-                size ={20}
-                    />
-
-            <TextInput 
-            placeholder ="Nhập Lại Mật Khẩu"
-            style={styles.textInput}
-            secureTextEntry ={data.confim_secureTextEntry ? true : false}
-            onChangeText={(val) => handleConfimPasswordChange(val)}
-            autoCapitalize ="none"
-            />
-            <TouchableOpacity onPress ={updateConfimSecureTextEntry}>
-                {data.confim_secureTextEntry ?
-                <FontAwesome5
-                name ="eye-slash"
-                color ="grey"
-                size={20}
-                />
-                    :
-                  <FontAwesome5
-                name ="eye"
-                color ="grey"
-                size={20}
-                />
-            }
-            </TouchableOpacity>
+            </View>
         </View>
         <TouchableOpacity
-        onPress = {()=> navigation.goBack()}
+        onPress={() => navigation.navigate('FGDetail')}
          style={[styles.signIn, {
                         borderColor: '#009387',
                         borderWidth: 1,
@@ -137,10 +77,12 @@ const SignInScreen = ({navigation}) => {
                     }]}
                 >
                     <Text style={[styles.textSign, {
-                        color: '#009387'
-                    }]}>Đăng Ký</Text>
+                        color: 'black'
+                    }]}>Kế tiếp</Text>
         </TouchableOpacity>
-        </Animatable.View>
+        
+        
+        </View>
         </View>
          
     );
@@ -155,31 +97,38 @@ const styles = StyleSheet.create({
     },
     header: {
         flex: 1,
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
+        alignItems:'center',
         paddingHorizontal: 20,
-        paddingBottom: 50
+        paddingBottom: 50,
+        marginTop:30
     },
     footer: {
         flex: 3,
-        backgroundColor: '#fff',
+        backgroundColor: '#009387',
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
         paddingHorizontal: 20,
-        paddingVertical: 30
+        paddingVertical: 30,
+        alignItems:'center'
     },
     text_header: {
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 30
+        fontSize: 25
     },
     text_footer: {
-        color: '#05375a',
-        fontSize: 18
+        color: '#fff',
+        fontSize: 18,
+        marginTop:8
+    },
+    text_footer2: {
+        color: '#fff',
+        fontSize: 18,
     },
     action: {
         flexDirection: 'row',
-        marginTop: 10,
-        borderBottomWidth: 1,
+        marginTop: 30,
         borderBottomColor: '#f2f2f2',
         paddingBottom: 5
     },
@@ -194,7 +143,18 @@ const styles = StyleSheet.create({
         flex: 1,
         marginTop: Platform.OS === 'ios' ? 0 : -12,
         paddingLeft: 10,
-        color: '#05375a',
+        color: 'black',
+        backgroundColor:'#fff',
+        borderRadius:90,
+        height:50,
+        flexDirection:'row',
+        alignItems:'center',
+    },
+    textInput2:{
+        color: 'black',
+        backgroundColor:'#fff',
+        fontWeight:'bold',
+        fontSize:20,
     },
     errorMsg: {
         color: '#FF0000',
@@ -205,15 +165,20 @@ const styles = StyleSheet.create({
         marginTop: 50
     },
     signIn: {
-        width: '100%',
+        width: '40%',
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 10,
+        borderRadius: 20,
+        backgroundColor:'#fff'
     },
     textSign: {
         fontSize: 18,
         fontWeight: 'bold',
         color:"#FFF"
-    }
+    },
+    img1:{
+        width:250,
+        height:250,
+      },
   });

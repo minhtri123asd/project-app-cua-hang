@@ -86,6 +86,11 @@ const SignInScreen = ({navigation}) => {
             }
             </TouchableOpacity>
         </View>
+        <View style={styles.fgpass}>
+            <TouchableOpacity onPress = {() => navigation.navigate('FGPassScreen')}>
+                <Text style={styles.text_footer}>Quên mật khẩu?</Text>
+            </TouchableOpacity>
+        </View>
         <TouchableOpacity
         onPress = {() => navigation.navigate('Home')}
         >
@@ -174,7 +179,7 @@ const styles = StyleSheet.create({
     },
     button: {
         alignItems: 'center',
-        marginTop: 50
+        marginTop: 20
     },
     signIn: {
         width: '100%',
@@ -187,5 +192,11 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         color:"#FFF"
+    },
+    fgpass:{
+        flex:0.2,
+        justifyContent: 'center',
+        marginTop:10,
+        alignItems:'flex-end'
     }
   });
