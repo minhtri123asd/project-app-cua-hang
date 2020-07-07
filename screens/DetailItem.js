@@ -40,6 +40,7 @@ export class  DetailItem extends Component {
       </View>
     </View>
 
+
     <View style ={styles.mInfo2}>
       <View style = {styles.wrapper} >
         <Text style = {styles.textRow1}>{this.props.route.params?.item.service1} </Text>
@@ -82,6 +83,12 @@ const IsFinishTrue2 = () => {
 
 const IsFinishFalse2 = () => {
   return <Text>Thanh toán</Text>
+}
+const IsFinishTrue = () =>  {
+  return   <Text style = {{color : 'green'}}>Thành Công </Text>
+}
+const IsFinishFalse = () =>  {
+  return   <Text style = {{color : 'red'}}>Thất Bại</Text>
 }
 
  const styles = StyleSheet.create({

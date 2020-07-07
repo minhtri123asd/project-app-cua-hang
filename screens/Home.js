@@ -1,8 +1,14 @@
 import  React, {Component} from 'react';
-import {Text, View, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, Dimensions, TouchableOpacity,Image,} from 'react-native';
 import {BackgroundCarousel} from '../components/BackgroundCarousel';
 import * as Animatable from 'react-native-animatable';
+import Icon from 'react-native-vector-icons/AntDesign'
+import Icon2 from 'react-native-vector-icons/Fontisto'
+import { TextInput } from 'react-native-paper';
 
+import { SearchBar } from './SearchBar'
+
+import GasImage from '../assets/gas.png'
 var {height, width} = Dimensions.get('window');
 const images = [
   'https://em.wattpad.com/4f1da9c5618b930d8047c1984b5c179b612b9360/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f58684279486e5772707743487a413d3d2d3639333339313533332e313538316463383362343030366538363430313731343435363432362e6a7067?s=fit&w=720&h=720',
@@ -13,14 +19,62 @@ const images = [
 ];
 
 export class Home extends Component{
-  render(){
-    return(
-      <Animatable.View animation="lightSpeedIn" style={styles.container}>
-        <BackgroundCarousel images={images} />
-      </Animatable.View>
-
-    )
+  constructor(props) {
+    super(props);
+    this.state = {
+      text : ' '
+    }
   }
+  render(){
+    return (
+      <View style = {{backgroundColor: '#FFFFFF',flex:1}}>
+        <SearchBar />
+        <Animatable.View animation="lightSpeedIn" style={styles.container}>
+          <BackgroundCarousel images={images} />
+        </Animatable.View>
+        <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+          <View style={styles.itemcontainer}>
+           <ItemIcon images={require('../assets/innovation.png')} name="Electronic" />
+          </View>
+          <View style={styles.itemcontainer}>
+            <ItemIcon images={require('../assets/gas.png')} name="Gas" />
+          </View>
+          <View style={styles.itemcontainer}>
+            <ItemIcon images={require('../assets/meditation.png')} name="Flower" />
+          </View>
+          <View style={styles.itemcontainer}>
+          <ItemIcon images={require('../assets/plane.png')}
+              name="Plane" />
+            </View>
+        </View>
+        <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+          <View style={styles.itemcontainer}>
+            <ItemIcon images={require('../assets/restaurant.png')} name="Food" />
+          </View>
+          <View style={styles.itemcontainer}>
+          <ItemIcon images={require('../assets/water.png')} name="Water" />
+          </View>
+          <View style={styles.itemcontainer}>
+            <ItemIcon images={require('../assets/train.png')} name="Train" />
+          </View>
+          <View style={styles.itemcontainer}>
+            <ItemIcon images={require('../assets/washing-machine.png')} name="Washing" />
+            </View>
+       
+      </View>
+
+      </View>
+       )
+  }
+}
+const ItemIcon = (props) => {
+  
+  return (
+    <TouchableOpacity style = {{justifyContent:'center',alignItems:'center'}}>
+      <Image source={props.images} style={{ width: 40, height: 40,margin:4 }} />
+      <Text style = {{margin:3}}>{props.name}</Text>
+  </TouchableOpacity>
+)
 }
 
 
@@ -35,6 +89,19 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     elevation: 5,
     justifyContent:'center',
-    alignItems:'center',
+    alignItems: 'center',
+    marginBottom: height / 10,
+    marginTop: 5
+    
+  },
+  itemcontainer: {
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: 'black',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: width / 4.5,
+    margin:4
   }
+
 })

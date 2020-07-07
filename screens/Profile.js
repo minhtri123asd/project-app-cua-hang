@@ -64,6 +64,7 @@ export class Profile extends Component{
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     width: width,
@@ -77,6 +78,7 @@ const styles = StyleSheet.create({
     marginBottom:10
   },
   barCode:{
+
     justifyContent:'center',
     alignItems:'center',
     flex:5,},
@@ -149,7 +151,8 @@ const styles = StyleSheet.create({
   text:{
     fontSize:22,
     marginLeft:10,
-    fontWeight: "bold"},
+    fontWeight: "bold"
+  },
   signIn: {
     width: '100%',
     height: 40,

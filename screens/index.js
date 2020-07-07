@@ -4,4 +4,6 @@ export * from './Profile';
 export * from './EditProfile';
 export * from './EditPass';
 export * from './DetailItem';
+export * from './HistoryBill'
+export * from './SearchBar'
 export * from './ProfileContainer';
