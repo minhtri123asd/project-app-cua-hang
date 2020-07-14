@@ -36,7 +36,7 @@ const SignInScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-            <Text style = {styles.text_header}> Đăng Nhập</Text>
+            <Text style = {styles.text_header}> Tài khoản </Text>
             </View>
         <Animatable.View 
         animation ="fadeInUpBig"
@@ -134,7 +134,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         paddingHorizontal: 20,
-        paddingBottom: 50
     },
     footer: {
         flex: 3,

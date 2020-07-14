@@ -46,34 +46,22 @@ const SignInScreen = ({navigation}) => {
         });
     }
     return (
-      <View style={styles.container}>
+      <Animatable.View animation ="fadeInRight" style={styles.container}>
         <View style={styles.header}>
-            <Image style={styles.img1} source={require('../assets/logo9.png')}/>
+            <Image style={styles.img1} source={require('../../assets/logo9.png')}/>
             </View>
         <View style={styles.footer}>   
             <Text style ={styles.text_header}>Nhập mã xác nhận của bạn</Text>
             <Text style ={styles.text_footer}>Chúng tôi đã gữi mã xác nhận vào email</Text>
             <Text style ={styles.text_footer2}>mà bạn đã đăng ký</Text>
-        <View style={styles.action}>
-            <View style={styles.textInput}>
-                <TextInput 
-                placeholder =""
-                style={styles.textInput2}
-                />
-                <TextInput 
-                placeholder =""
-                style={styles.textInput2}
-                />
-                <TextInput 
-                placeholder =""
-                style={styles.textInput2}
-                />
-                <TextInput 
-                placeholder =""
-                style={styles.textInput2}
-                />
-            </View>
-        </View>
+            <View style={styles.action}>
+                    <View style={styles.textInput}>
+                        <TextInput 
+                        placeholder =""
+                        style={styles.textInput2}
+                        />
+                    </View>
+                </View>
         <TouchableOpacity
         onPress={() => navigation.navigate('FGEdit')}
          style={[styles.signIn, {
@@ -89,7 +77,7 @@ const SignInScreen = ({navigation}) => {
         
         
         </View>
-        </View>
+        </Animatable.View>
          
     );
 };
@@ -148,21 +136,20 @@ const styles = StyleSheet.create({
     textInput: {
         flex: 1,
         marginTop: Platform.OS === 'ios' ? 0 : -12,
+        paddingLeft: 10,
         color: 'black',
+        backgroundColor:'#fff',
+        borderRadius:90,
         height:50,
-        width:50,
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'center'
     },
     textInput2:{
+        marginLeft:20,
         color: 'black',
         backgroundColor:'#fff',
         fontWeight:'bold',
         fontSize:20,
-        marginLeft:20,
-        height:50,
-        width:50,
     },
     errorMsg: {
         color: '#FF0000',

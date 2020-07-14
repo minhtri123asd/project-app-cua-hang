@@ -46,9 +46,9 @@ const SignInScreen = ({navigation}) => {
         });
     }
     return (
-      <View style={styles.container}>
+      <Animatable.View animation ="fadeInRight" style={styles.container}>
         <View style={styles.header}>
-            <Image style={styles.img1} source={require('../assets/logo9.png')}/>
+            <Image style={styles.img1} source={require('../../assets/logo9.png')}/>
         </View>
         <View style={styles.footer}>   
             <Text style ={styles.text_header}>Nhập mật khẩu mới cho tài khoản</Text>
@@ -95,7 +95,7 @@ const SignInScreen = ({navigation}) => {
                 <Text style={[styles.textSign, {color: 'black'}]}>Thay đổi</Text>
             </TouchableOpacity>
             </View>
-        </View>
+        </Animatable.View>
          
     );
 };

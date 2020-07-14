@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
-import {Home, Checkbill, Profile, EditPass,DetailItem,ProfileContainer} from './index';
-import {Home, Checkbill, Profile, EditProfile, EditPass,DetailItem,HistoryBill} from './index'
-import {Home, Checkbill, Profile, EditProfile, EditPass,DetailItem,ProfileContainer} from './index'
+import {Home, Checkbill, DetailItem} from './index'
+import Profile from '../screens/Profiles/Profile'
+import ProfileDetail from '../screens/Profiles/ProfileDetail'
+import ProfileEdit from '../screens/Profiles/ProfileEdit'
+import ProfileEditPass from '../screens/Profiles/ProfileEditPass'
 import {createStackNavigator} from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -21,7 +23,7 @@ const MainTabScreen =() => (
           tabBarIcon: ({ color }) => (<Icon name="ios-home" color={color} size={26} />),}}/>
       <Tab.Screen name="Checkbill" component={Check} options={{ tabBarLabel: 'Orders',
           tabBarIcon: ({ color }) => (<Icon name="ios-timer" color={color} size={26} />),}}/>
-      <Tab.Screen name="ProfileContainer" component={ProfileStack} options={{tabBarLabel: 'Profile',
+      <Tab.Screen name="Profile" component={ProfileStack} options={{tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (<Icon name="ios-person" color={color} size={26} />),}}/>
     </Tab.Navigator>
 );
@@ -40,11 +42,11 @@ function HomeStack() {
 const StackProfile = createStackNavigator();
 function ProfileStack(){
   return(
-    <StackProfile.Navigator initialRouteName="ProfileContainer">
-      <StackProfile.Screen name="ProfileContainer" component={ProfileContainer} options={navOptionHandler}/>
-      <StackProfile.Screen name="Profile" component={Profile} options={navOptionHandler}/>
-      {/* <StackProfile.Screen name="EditProfile" component={EditProfile} options={navOptionHandler}/>
-      <StackProfile.Screen name="EditPass" component={EditPass} options={navOptionHandler}/> */}
+    <StackProfile.Navigator initialRouteName="Profile">
+        <StackProfile.Screen name="Profile" component={Profile} options={navOptionHandler}/>
+        <StackProfile.Screen name="ProfileDetail" component={ProfileDetail} options={navOptionHandler}/>
+        <StackProfile.Screen name="ProfileEdit" component={ProfileEdit} options={navOptionHandler}/>
+        <StackProfile.Screen name="ProfileEditPass" component={ProfileEditPass} options={navOptionHandler}/>
     </StackProfile.Navigator>
 
 
@@ -55,12 +57,9 @@ const CheckBills = createStackNavigator() ;
 function Check() {
 
   return (
-    <CheckBills.Navigator screenOptions={{
-    headerShown: false
-  }} initialRouteName='Checkbill' >
-      <CheckBills.Screen name = 'Checkbill' component={Checkbill}/>
-      <CheckBills.Screen name = 'DetailItem' component= {DetailItem} />
-      <CheckBills.Screen name = 'Checkbill' component={Checkbill} />
+    <CheckBills.Navigator initialRouteName='Checkbill' >
+      <CheckBills.Screen name = 'Checkbill' component={Checkbill} options={{title:'Đơn hàng',headerTintColor:'white', headerStyle:{backgroundColor:'#009387'}}}/>
+      <CheckBills.Screen name = 'DetailItem' component= {DetailItem} options={{title:'Chi tiết đơn hàng',headerTintColor:'white', headerStyle:{backgroundColor:'#009387'}}}/>
     </CheckBills.Navigator>
   )
 }

@@ -46,45 +46,45 @@ const SignInScreen = ({navigation}) => {
         });
     }
     return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-            <Image style={styles.img1} source={require('../assets/logo9.png')}/>
-            </View>
-        <View style={styles.footer}>   
-            <Text style ={styles.text_header}>Nhập địa chỉ email của bạn</Text>
-            <Text style ={styles.text_footer}>Chúng tôi sẽ gữi mã xác nhận vào email</Text>
-            <Text style ={styles.text_footer2}>mà bạn đã đăng ký</Text>
-        <View style={styles.action}>
-            <View style={styles.textInput}>
-                <FontAwesome5
-                name ="share"
-                color ="#05375a"
-                size ={20}
-                    />
+        
+            <Animatable.View animation ="fadeInRight" style={styles.container}>
+                <View style={styles.header}>
+                    <Image style={styles.img1} source={require('../../assets/logo9.png')}/>
+                    </View>
+                <View style={styles.footer}>   
+                    <Text style ={styles.text_header}>Nhập địa chỉ email của bạn</Text>
+                    <Text style ={styles.text_footer}>Chúng tôi sẽ gữi mã xác nhận vào email</Text>
+                    <Text style ={styles.text_footer2}>mà bạn đã đăng ký</Text>
+                <View style={styles.action}>
+                    <View style={styles.textInput}>
+                        <FontAwesome5
+                        name ="share"
+                        color ="#05375a"
+                        size ={20}
+                            />
 
-            <TextInput 
-            placeholder ="Email"
-            style={styles.textInput2}
-            />
-            </View>
-        </View>
-        <TouchableOpacity
-        onPress={() => navigation.navigate('FGDetail')}
-         style={[styles.signIn, {
-                        borderColor: '#009387',
-                        borderWidth: 1,
-                        marginTop: 15
-                    }]}
-                >
-                    <Text style={[styles.textSign, {
-                        color: 'black'
-                    }]}>Kế tiếp</Text>
-        </TouchableOpacity>
-        
-        
-        </View>
-        </View>
-         
+                    <TextInput 
+                    placeholder ="Email"
+                    style={styles.textInput2}
+                    />
+                    </View>
+                </View>
+                <TouchableOpacity
+                onPress={() => navigation.navigate('FGDetail')}
+                style={[styles.signIn, {
+                                borderColor: '#009387',
+                                borderWidth: 1,
+                                marginTop: 15
+                            }]}
+                        >
+                            <Text style={[styles.textSign, {
+                                color: 'black'
+                            }]}>Kế tiếp</Text>
+                </TouchableOpacity>
+                
+                
+                </View>
+            </Animatable.View>
     );
 };
 

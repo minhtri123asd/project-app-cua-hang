@@ -10,7 +10,7 @@ import {
   View, Dimensions, Image
 } from 'react-native';
 var { height, width } = Dimensions.get('window');
-import history from '../assets/history.png'
+import history from '../../assets/history.png'
 
 export class Checkbill extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ export class Checkbill extends Component {
         {nameBill: 'Thanh Toán Tiền Wifi' , timeBill: '7-13 22:31' , isFinished : true, isFinished2 :true, price: '400.000đ', phoneUser: '0983815828', nameUser: 'Nguyễn Văn A', adressUser: '117 Cống Quỳnh, Nguyễn Cư Trinh, Q1', service1: 'Tiền wifi tháng 6', price1: '400.000đ', amount1: 'x1'},
         {nameBill: 'Thanh Toán Tiền Điện' , timeBill: '7-14 18:38' , isFinished : true, isFinished2 :true, price: '660.000đ', phoneUser: '0983815828', nameUser: 'Nguyễn Văn A', adressUser: '117 Cống Quỳnh, Nguyễn Cư Trinh, Q1', service1: 'Tiền điện tháng 6', price1: '660.000đ', amount1: 'x1'},
         {nameBill: 'Thanh Toán Tiền Hoa' , timeBill: '7-14 20:32' , isFinished : true, isFinished2 :true, price: '710.000đ', phoneUser: '0983815828', nameUser: 'Nguyễn Văn A', adressUser: '117 Cống Quỳnh, Nguyễn Cư Trinh, Q1', service1: 'Hoa hồng', service2: 'Hoa cúc trắng', price1: '50.000đ', price2: '30.000đ', amount1: 'x10', amount2: 'x7'},
-        
+
 
         ]
       }
@@ -35,14 +35,13 @@ export class Checkbill extends Component {
 
   render() {
     return (
-
-      <View style={{ backgroundColor: '#FFFFFF' }}>
+      <View>
         <FlatList
-          data={this.state.data}
-          extraData={this.props}
-          keyExtractor={(item, index) => index}
-          renderItem={({ item }) => <RenderItem onpress={() => this.props.navigation.navigate('DetailItem', { item: item })} product={item} />}
-        />
+            data={this.state.data}
+            extraData={this.props}
+            keyExtractor={ (item, index) => index }
+            renderItem={ ({item}) => <RenderItem onpress = {() => this.props.navigation.navigate('DetailItem',{item :item} )}  product = {item} /> }
+          />
       </View>
 
     )
@@ -54,7 +53,7 @@ export class Checkbill extends Component {
     <TouchableOpacity onPress = {onpress}>
       <View style= {styles.itemContainer}>
         <View style= {styles.itemImageContainer}>
-          <Image  style = {styles.itemImage}   source={require('../assets/money.png')} />
+          <Image  style = {styles.itemImage}   source={require('../../assets/money.png')} />
         </View>
         <View style = {styles.itemInfo}>
           <Text style = {styles.itemName}> {product.nameBill}</Text>
@@ -75,14 +74,8 @@ const IsFinishTrue = () => {
 
 const IsFinishFalse = () => {
   return <Text style={{color: 'red'}}>Đang xử lý</Text>
+}
 
-}
-const IsFinishTrue = () => {
-  return <Text style={{ color: 'green' }}>Thành Công </Text>
-}
-const IsFinishFalse = () => {
-  return <Text style={{ color: 'red' }}>Thất Bại</Text>
-}
 
 
 const styles = StyleSheet.create({
@@ -103,10 +96,8 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     flex:1,
     marginTop:7,
-    marginBottom:7,
-    marginLeft: 10,
-    flexDirection: 'column',
-    flex: 1
+    marginBottom:7
+    
   },
   itemName: {
     fontSize: 15,
